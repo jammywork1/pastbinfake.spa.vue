@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PastBinFake.SPA</title>
+
+    <!-- <link rel="stylesheet" href="~/lib/metro/build/css/metro.min.css" /> -->
+    <link rel="stylesheet" href="~/css/site.css" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="~/lib/semantic/dist/semantic.min.css" />
+</head>
+<body>
+    <div id="app">
+        <header class="app-bar" data-role="appbar">
+    <div class="container">
+        <div class="app-bar">
+        <span class="app-bar-divider"></span>
+        <ul class="app-bar-menu">
+            <li><a id="link_notes_all" href="#notes/all">All Notes</a></li>
+            <li><a id="link_notes_create" href="#notes/create">Create new note</a></li>
+        </ul>
+        </div>
+</div>
+        </header>
+<div class="container page-content">
+    <div id="area_preloader" class="hidden">
+        <div >
+            <div class="margin-auto" data-role="preloader" data-type="cycle" data-style="color"></div>
+        </div>
+    </div>
+    <div id="area_notes_all" class="hidden">
+        <div class="">
+            <table class="table hovered border bordered">
+                <tr>
+                    <th>Title</th>    
+                    <th>Created</th>    
+                </tr>
+                <tr>
+                    <td>asdasd asdasda asdasda asdasdas asdasd</td>
+                    <td>23/11/2017 12:52</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+<div id="area_notes_create" class="hidden">
+    <form
+    data-role="validator"
+    data-on-error-input="notifyOnErrorInput"
+    data-show-error-hint="false">
+        <div class="grid">
+            <div class="row cells4">
+                <div class="cell colspan3">
+                    <label class="block">Title</label>
+                    <div class="input-control text full-size">
+                        <input
+            data-validate-func="minlength"
+            data-validate-arg="6"
+            data-validate-hint="This field must contains min 6 symbols!"
+            type="text"
+            id="input_notes_create_title">
+        <span class="input-state-error mif-warning"></span>
+        <span class="input-state-success mif-checkmark"></span>
+                            
+                        <span class="input-state-error mif-warning"></span>
+                        <span class="input-state-success mif-checkmark"></span>
+                    </div>
+                </div>
+                <div class="cell">
+                    <label>Note duration</label>
+                    <div class="input-control select full-size">
+                        <select id="select_notes_create_duration">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row cells1">
+                <div class="cell">
+                    <label>Note body</label>
+                    <div class="input-control textarea full-size" data-role="input" data-text-auto-resize="true">
+                        <textarea style="min-height: 600px;" id="input_notes_create_body"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="button success" id="btn_notes_create">Create new note</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+    </div>
+</div>
+<!-- <script src="~/lib/lodash/dist/lodash.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/lib/metro/build/js/metro.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script> -->
+    <script src="~/js/build.js" asp-append-version="true"></script>
+    <!-- <script src="~/lib/moment/min/moment.min.js"></script> -->
+     
+</body>
+</html>
+
+
