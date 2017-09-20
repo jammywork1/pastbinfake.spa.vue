@@ -1,21 +1,20 @@
-#pastbinfake.spa.vue
-##stack:
-* .net core 2
-* vue.js 2
-* semantic ui
+# pastbinfake.spa.vue
+----------------
+## stack:
+    * .net core 2
+    * vue.js 2
+    * semantic ui
+----------------
+## build 
 
-##build 
-###frontend:
-bower install
+### frontend:
+    bower install
+    npm install
+    npm run build
 
-npm install
+### backend:
+    dotnet build
 
-npm run build
-
-###backend:
-dotnet build
-
-##run
-dotnet run
-
-
+----------------
+## run
+    dotnet run
