@@ -13,6 +13,7 @@
     npm run build
 
 ### backend:
+    dotnet restore
     dotnet build
 
 ----------------
