@@ -35,20 +35,20 @@ namespace PastBinFake.SPA
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IShortUrlGenerator, GuidShortUrlGenerator>();
-            services.AddTransient<MemoryContext>();
-            services.AddTransient<IUnitOfWork, MemoryUnitOfWork>();
-            services.AddTransient(typeof(NotesService));
-            services.AddTransient(typeof(SystemFacade));
             services.AddMvc();
+            DependencyInjectionConfigure.Configure(services);
 
-            var config = new MapperConfiguration(cfg => {
-                cfg.CreateMap<NoteCreateViewModel, NoteCreateDTO>();
-                cfg.CreateMap<NoteDTO, NoteViewModel>();
-                cfg.CreateMap<NoteDTO, NoteShortViewModel>();
-                cfg.CreateMap<NoteCreateDTO, NoteCreateDomainModel>();
-                cfg.CreateMap<NoteCreateDomainModel, NoteDTO>();
+            ConfigureMapper(services);
+        }
+
+        private void ConfigureMapper(IServiceCollection services)
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+                PastBinFake.SPA.MapperConfigure.Configure(cfg);
+                PastBinFake.SPA.DomainLogic.MapperConfigure.Configure(cfg);
             });
+
             services.AddSingleton<IMapper>(sp => config.CreateMapper());
         }
 
