@@ -1,4 +1,4 @@
-﻿namespace PastBinFake.SPA.DataLayer
+﻿namespace PastBinFake.SPA.DataAccessLayer
 {
     public interface IUnitOfWork
     {

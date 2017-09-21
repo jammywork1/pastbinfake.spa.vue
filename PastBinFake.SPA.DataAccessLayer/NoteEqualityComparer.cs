@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using PastBinFake.SPA.DataLayer.Entities;
+using PastBinFake.SPA.DataAccessLayer.Entities;
 
-namespace PastBinFake.SPA.DataLayer
+namespace PastBinFake.SPA.DataAccessLayer
 {
     public class NoteEqualityComparer : IEqualityComparer<INoteEntity>
     {

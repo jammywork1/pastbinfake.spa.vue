@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using PastBinFake.SPA.DataLayer.Entities;
+using PastBinFake.SPA.DataAccessLayer.Entities;
 
-namespace PastBinFake.SPA.DataLayer
+namespace PastBinFake.SPA.DataAccessLayer
 {
     public interface INoteRepository
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PastBinFake.SPA.DataLayer.Exceptions
+namespace PastBinFake.SPA.DataAccessLayer.Exceptions
 {
     [Serializable]
     public class CreateEntityException : Exception

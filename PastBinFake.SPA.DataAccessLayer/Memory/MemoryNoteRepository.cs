@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PastBinFake.SPA.DataLayer.Entities;
-using PastBinFake.SPA.DataLayer.Exceptions;
+using PastBinFake.SPA.DataAccessLayer.Entities;
+using PastBinFake.SPA.DataAccessLayer.Exceptions;
 
-namespace PastBinFake.SPA.DataLayer.Memory
+namespace PastBinFake.SPA.DataAccessLayer.Memory
 {
     public class MemoryNoteRepository : INoteRepository
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using PastBinFake.SPA.DataLayer.Entities;
+using PastBinFake.SPA.DataAccessLayer.Entities;
 
-namespace PastBinFake.SPA.DataLayer.Memory
+namespace PastBinFake.SPA.DataAccessLayer.Memory
 {
     public class MemoryContext
     {

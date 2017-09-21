@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PastBinFake.SPA.DataLayer.Entities
+namespace PastBinFake.SPA.DataAccessLayer.Entities
 {
     public class NoteEntity : INoteEntity
     {

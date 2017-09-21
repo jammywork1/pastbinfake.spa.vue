@@ -1,5 +1,5 @@
 ﻿using System;
-using PastBinFake.SPA.DataLayer.Entities;
+using PastBinFake.SPA.DataAccessLayer.Entities;
 
 namespace PastBinFake.SPA.DomainLogic.Models
 {

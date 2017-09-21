@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PastBinFake.SPA.DataLayer.Memory
+namespace PastBinFake.SPA.DataAccessLayer.Memory
 {
     public class MemoryUnitOfWork : IUnitOfWork
     {
