@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005">
+      <HintPath>..\..\..\..\.nuget\packages\automapper\6.1.1\lib\netstandard1.3\AutoMapper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PastBinFake.SPA.DataAccessLayer\PastBinFake.SPA.DataAccessLayer.csproj">
+      <Project>{A478A0EE-A0B0-43C4-B25E-FBF549DF8479}</Project>
+      <Name>PastBinFake.SPA.DataAccessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

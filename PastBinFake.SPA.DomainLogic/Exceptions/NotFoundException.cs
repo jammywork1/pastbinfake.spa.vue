@@ -3,7 +3,7 @@
 namespace PastBinFake.SPA.DomainLogic.Exceptions
 {
     [Serializable]
-    internal class NotFoundException : Exception
+    public class NotFoundException : Exception
     {
     }
 }

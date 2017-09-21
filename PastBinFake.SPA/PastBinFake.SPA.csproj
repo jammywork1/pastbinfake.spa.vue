@@ -33,6 +33,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DomainLogic" />
     <Folder Include="wwwroot\images" />
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
@@ -41,5 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PastBinFake.SPA.DataAccessLayer\PastBinFake.SPA.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\PastBinFake.SPA.DomainLogic\PastBinFake.SPA.DomainLogic.csproj" />
   </ItemGroup>
 </Project>

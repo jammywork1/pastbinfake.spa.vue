@@ -26,4 +26,5 @@ namespace PastBinFake.SPA.DomainLogic
             return calcFunc(moment);
         }
     }
+
 }
