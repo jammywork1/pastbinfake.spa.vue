@@ -16,6 +16,8 @@ using PastBinFake.SPA.DomainLogic.DataTransferObjects;
 using PastBinFake.SPA.DomainLogic.Models;
 using PastBinFake.SPA.DomainLogic.UrlGenerators;
 using PastBinFake.SPA.ViewModels;
+using Serilog;
+using Serilog.Sinks.RollingFile;
 
 namespace PastBinFake.SPA
 {
@@ -29,6 +31,12 @@ namespace PastBinFake.SPA
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+            
+            Log.Logger = new LoggerConfiguration()
+                //.WriteTo.RollingFile(".\\logs")
+                .ReadFrom.Configuration(Configuration)
+                .CreateLogger();
+            Log.Logger.Debug($"Logger success created");
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -37,7 +45,10 @@ namespace PastBinFake.SPA
         {
             services.AddMvc();
             DependencyInjectionConfigure.Configure(services);
-
+            
+            services.AddLogging(loggingBuilder =>
+                loggingBuilder.AddSerilog(dispose: true));
+            //services.AddLogging();
             ConfigureMapper(services);
         }
 
@@ -45,8 +56,8 @@ namespace PastBinFake.SPA
         {
             var config = new MapperConfiguration(cfg =>
             {
-                PastBinFake.SPA.MapperConfigure.Configure(cfg);
-                PastBinFake.SPA.DomainLogic.MapperConfigure.Configure(cfg);
+                MapperConfigure.Configure(cfg);
+                DomainLogic.MapperConfigure.Configure(cfg);
             });
 
             services.AddSingleton<IMapper>(sp => config.CreateMapper());
@@ -54,13 +65,14 @@ namespace PastBinFake.SPA
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
+            //loggerFactory.AddSerilog();
+//            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+//            loggerFactory.AddDebug();
 
             //if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+//            {
+//                app.UseDeveloperExceptionPage();
+//            }
             //else
             //{
             //    app.UseExceptionHandler("/Home/Error");
@@ -73,8 +85,6 @@ namespace PastBinFake.SPA
                     name: "default",
                     template: "{*pathInfo}",
                     defaults: new {controller = "Home", action = "Index"});
-
-
             });
             
         }

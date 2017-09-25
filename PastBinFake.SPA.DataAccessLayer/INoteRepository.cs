@@ -9,5 +9,7 @@ namespace PastBinFake.SPA.DataAccessLayer
         Task<INoteEntity> GetNoteByUrl(string url);
         Task<IEnumerable<INoteEntity>> GetActualNotesSlice(int take, int skip);
         Task Create(INoteEntity noteEntity);
+        Task Update(INoteEntity noteEntity);
+        Task Delete(INoteEntity noteEntity);
     }
 }

@@ -8,6 +8,7 @@ using PastBinFake.SPA.DomainLogic;
 using PastBinFake.SPA.DomainLogic.DataTransferObjects;
 using PastBinFake.SPA.DomainLogic.Exceptions;
 using PastBinFake.SPA.ViewModels;
+using Serilog;
 
 namespace PastBinFake.SPA
 {
@@ -26,6 +27,7 @@ namespace PastBinFake.SPA
         [HttpGet]
         public async Task<IEnumerable<NoteShortViewModel>> Get()
         {
+            Log.Logger.Debug($"Call get all notes");
             var founds = await _systemFacade.GetNotesSlice(int.MaxValue, 0);
             return founds.Select(_mapper.Map<NoteDTO, NoteShortViewModel>);
         }
@@ -33,9 +35,12 @@ namespace PastBinFake.SPA
         [HttpGet("{url}")]
         public async Task<ActionResult> Get(string url)
         {
+            Log.Logger.Warning($"Call get note by url {url}");
             try
             {
                 var found = await _systemFacade.GetNoteByUrl(url);
+                Log.Logger.Warning("Found note {@found}", found);
+                Log.Logger.Warning("Found note {found}", found);
                 return StatusCode(200, _mapper.Map<NoteDTO, NoteViewModel>(found));
             }
             catch (NotFoundException)

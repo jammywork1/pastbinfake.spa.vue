@@ -28,6 +28,12 @@
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.0.0" />
+    <PackageReference Include="Serilog" Version="2.5.0" />
+    <PackageReference Include="Serilog.Enrichers.Thread" Version="3.0.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="2.0.2" />
+    <PackageReference Include="Serilog.Formatting.Compact" Version="1.0.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="2.4.0" />
+    <PackageReference Include="Serilog.Sinks.Literate" Version="3.0.0" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
@@ -41,7 +47,6 @@
     <None Remove="npm-debug.log" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PastBinFake.SPA.DataAccessLayer\PastBinFake.SPA.DataAccessLayer.csproj" />
     <ProjectReference Include="..\PastBinFake.SPA.DomainLogic\PastBinFake.SPA.DomainLogic.csproj" />
   </ItemGroup>
 </Project>
